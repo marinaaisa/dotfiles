@@ -1,0 +1,12 @@
+##################### cask #####################
+cask "1password"
+cask "google-chrome"
+cask "spotify"
+cask "visual-studio-code"
+cask "iterm2"
+cask "figma"
+cask "notion"
+
+##################### Install Manually #####################
+
+# Mouseless
