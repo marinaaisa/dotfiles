@@ -140,10 +140,10 @@ function change_shell_to_fish() {
         user=$(whoami)
         substep "Adding Fish executable to /etc/shells"
         if grep --fixed-strings --line-regexp --quiet \
-            "/usr/local/bin/fish" /etc/shells; then
+            "/opt/homebrew/bin/fish" /etc/shells; then
             substep "Fish executable already exists in /etc/shells"
         else
-            if echo /usr/local/bin/fish | sudo tee -a /etc/shells > /dev/null;
+            if echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells > /dev/null;
             then
                 substep "Fish executable successfully added to /etc/shells"
             else
@@ -152,7 +152,7 @@ function change_shell_to_fish() {
             fi
         fi
         substep "Switching shell to Fish for \"${user}\""
-        if sudo chsh -s /usr/local/bin/fish "$user"; then
+        if sudo chsh -s /opt/homebrew/bin/fish "$user"; then
             success "Fish shell successfully set for \"${user}\""
         else
             error "Please try setting Fish shell again"

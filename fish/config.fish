@@ -18,13 +18,13 @@ set --global --export BAT_THEME          Dracula
 ############################################################################
 # PATH setup
 ############################################################################
-# /usr/local/bin is where brew symlinks most executables it installs
-# /usr/local/sbin is where brew symlinks some of its executables
+# /opt/homebrew/bin is where brew symlinks most executables it installs
+# /opt/homebrew/sbin is where brew symlinks some of its executables
 # By putting these paths before $fish_user_paths, they will take precedence
 # over system provided programs
 set --global --export fish_user_paths \
-    /usr/local/bin \
-    /usr/local/sbin \
+    /opt/homebrew/bin \
+    /opt/homebrew/sbin \
     $fish_user_paths
 
 
