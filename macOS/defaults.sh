@@ -7,6 +7,7 @@ main() {
     configure_3rd_party
 }
 
+# https://macos-defaults.com/dock/
 function configure_system() {
     LOGIN_HOOK_PATH=~/dotfiles/macOS/login_hook_script.sh
     LOGOUT_HOOK_PATH=~/dotfiles/macOS/logout_hook_script.sh
@@ -37,6 +38,13 @@ function configure_system() {
     # Show volume in the menu bar
     defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -int 1
 
+    # Dock settings
+    defaults write com.apple.dock "orientation" -string "left"
+    defaults write com.apple.dock persistent-apps -array
+    defaults write com.apple.dock "tilesize" -int "40"
+    defaults write com.apple.dock "show-recents" -bool "false"
+    killall Dock
+
     # Hide airplay menu item
     defaults write com.apple.airplay showInMenuBarIfPresent -bool false
 
@@ -53,6 +61,23 @@ function configure_system() {
 
     # Restart automatically if the computer freezes
     sudo systemsetup -setrestartfreeze on
+
+    ###############################################################################
+    # 💻 Trackpad
+    ###############################################################################
+
+    # Enable tap to click for the current user and the login screen. (Don't have to press down on the trackpad -- just tap it.)
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+    defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
+    defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
+    defaults write -g com.apple.mouse.tapBehavior -int 1
+
+    # Trackpad: map two fingers tap to right-click
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+    defaults -currentHost write -g com.apple.trackpad.trackpadCornerClickBehavior -int 1
+    defaults -currentHost write -g com.apple.trackpad.enableSecondaryClick -bool true
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -int 1
 }
 
 function configure_finder() {

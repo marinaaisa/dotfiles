@@ -1,3 +1,3 @@
-function gc --wraps "git commit"
-    git commit --quiet $argv
+function gc
+    git checkout $argv
 end

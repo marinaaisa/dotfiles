@@ -1,8 +1,6 @@
 brew "fish"
 brew "git"
-brew "node@14"
 brew "mas"
-brew "yarn"
 brew "tldr"
 brew "wget"
 brew "starship"

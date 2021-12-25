@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DOTFILE_REPO_GITHUB_LINK=https://raw.githubusercontent.com/marinaaisa/dotfiles/master
-DOTFILES_REPO=~/dotfiles
+DOTFILES_REPO=~/Projects/dotfiles
 
 main() {
     # Required to install packages
@@ -162,8 +162,6 @@ function change_shell_to_fish() {
 
 function setup_symlinks() {
     info "Setting up symlinks"
-
-    symlink "git"           ${DOTFILES_REPO}/git/config                 ~/.gitconfig
 
     symlink "fish:functions"   ${DOTFILES_REPO}/fish/functions    ~/.config/fish/functions
     symlink "fish:config.fish" ${DOTFILES_REPO}/fish/config.fish  ~/.config/fish/config.fish

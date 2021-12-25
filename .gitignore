@@ -13,6 +13,7 @@ Icon
 
 # Thumbnails
 ._*
+_*
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
@@ -33,3 +34,7 @@ Temporary Items
 # End of https://www.gitignore.io/api/macos
 
 brew/Brewfile
+
+# Fish functions
+fish/functions/fisher.fish
+fish/functions/nvm.fish

@@ -2,6 +2,8 @@
   "markdown.extension.preview.autoShowPreviewToSide": false,
   "editor.minimap.enabled": false,
   "editor.formatOnPaste": false,
+  "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontWeight": "200",
   "files.exclude": {
     "**/__pycache__": true,
     "**/_build": true,
@@ -78,7 +80,7 @@
   "markdown.preview.doubleClickToSwitchToEditor": false,
   "markdown.preview.linkify": false,
   "markdown.preview.markEditorSelection": false,
-  "eslint.packageManager": "yarn",
+  "eslint.packageManager": "npm",
   "vetur.format.defaultFormatter.js": "prettier-eslint",
   "search.useIgnoreFiles": false,
   "javascript.updateImportsOnFileMove.enabled": "always",

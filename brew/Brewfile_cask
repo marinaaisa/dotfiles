@@ -6,6 +6,7 @@ cask "visual-studio-code"
 cask "iterm2"
 cask "figma"
 cask "notion"
+cask "anki"
 
 ##################### Install Manually #####################
 

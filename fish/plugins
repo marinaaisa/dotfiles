@@ -1,3 +1,4 @@
-jorgebucaran/fisher                 # Plugin manager itself
-jethrokuan/z                        # Pure-fish z directory jumping
-dracula/fish                        # Dracula theme which influences the colors of what you type
+jorgebucaran/fisher
+jorgebucaran/nvm.fish
+jethrokuan/z
+dracula/fish

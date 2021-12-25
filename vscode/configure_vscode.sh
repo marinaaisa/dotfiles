@@ -31,6 +31,7 @@ function install_extensions() {
         code --install-extension pflannery.vscode-versionlens
         code --install-extension editorconfig.editorconfig
         code --install-extension yzhang.markdown-all-in-one
+        code --install-extension formulahendry.code-runner
         # Theme
         code --install-extension dracula-theme.theme-dracula
         code --install-extension pkief.material-icon-theme
