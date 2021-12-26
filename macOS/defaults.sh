@@ -7,7 +7,29 @@ main() {
     configure_3rd_party
 }
 
-# https://macos-defaults.com/dock/
+function add_app_to_dock {
+    app="${1}"
+
+    if open -Ra "${app}"; then
+        echo "$app added to the Dock."
+
+        defaults write com.apple.dock persistent-apps -array-add "<dict>
+                <key>tile-data</key>
+                <dict>
+                    <key>file-data</key>
+                    <dict>
+                        <key>_CFURLString</key>
+                        <string>${app}</string>
+                        <key>_CFURLStringType</key>
+                        <integer>0</integer>
+                    </dict>
+                </dict>
+            </dict>"
+    else
+        echo "ERROR: Application $1 not found."
+    fi
+}
+
 function configure_system() {
     LOGIN_HOOK_PATH=~/dotfiles/macOS/login_hook_script.sh
     LOGOUT_HOOK_PATH=~/dotfiles/macOS/logout_hook_script.sh
@@ -38,11 +60,30 @@ function configure_system() {
     # Show volume in the menu bar
     defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -int 1
 
-    # Dock settings
+    ###############################################################################
+    # Dock
+    ###############################################################################
     defaults write com.apple.dock "orientation" -string "left"
     defaults write com.apple.dock persistent-apps -array
     defaults write com.apple.dock "tilesize" -int "40"
     defaults write com.apple.dock "show-recents" -bool "false"
+
+    declare -a apps=(
+        '/Applications/1Password 7.app'
+        '/System/Applications/Notes.app'
+        '/Applications/Todoist.app'
+        '/Applications/iTerm.app'
+        '/Applications/Visual Studio Code.app'
+        '/Applications/Google Chrome.app'
+        '/Applications/Spotify.app'
+        '/Applications/Anki.app'
+    );
+
+    for app in "${apps[@]}"; do
+        add_app_to_dock "$app"
+    done
+
+    # Apply Dock changes
     killall Dock
 
     # Hide airplay menu item
