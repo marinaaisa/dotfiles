@@ -5,8 +5,12 @@ cask "spotify"
 cask "visual-studio-code"
 cask "iterm2"
 cask "figma"
-cask "notion"
-cask "anki"
+cask "slack"
+cask "raycast"
+cask "obsidian"
+# should install `Wacom Intuos Pro small (2019) - PTH-460 Support`
+# from https://www.wacom.com/en-es/support/product-support/drivers
+cask "wacom-tablet"
 
 ##################### Install Manually #####################
 

@@ -25,13 +25,8 @@ System Preferences > Displays > Display > Scaled > Larger Text
 
 ### Wacom Driver
 
-https://www.wacom.com/en-es/support/product-support/drivers
-`Wacom Intuos Pro small (2019) - PTH-460 Support`
 `System Preferences > Security & Privacy > Privacy`. Scroll to Accessibility in the list on the left. Unlock the settings, and then make sure all Wacom applications in the list are checked.
 `System Preferences > Security & Privacy > Input Monitoring` and again make sure all Wacom applications in the list are checked (WacomTabletDriver.app)
 
 ### Spanish Keyboard
 Add Spanish Keyboard on `System Preferences > Language Region > Keyboard Preferences`
-
-### Email config
-`Mail -> Preferences -> List Preview -> None`

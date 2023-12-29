@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-DOTFILE_REPO_GITHUB_LINK=https://raw.githubusercontent.com/marinaaisa/dotfiles/master
-DOTFILES_REPO=~/Projects/dotfiles
+PROJECTS_REPO=~/Projects
+DOTFILES_REPO=${PROJECTS_REPO}/dotfiles
 
 main() {
     # Required to install packages
@@ -166,8 +166,16 @@ function setup_symlinks() {
     symlink "fish:functions"   ${DOTFILES_REPO}/fish/functions    ~/.config/fish/functions
     symlink "fish:config.fish" ${DOTFILES_REPO}/fish/config.fish  ~/.config/fish/config.fish
     symlink "fish:plugins"     ${DOTFILES_REPO}/fish/plugins      ~/.config/fish/fish_plugins
+    symlink "fish:history"     ${DOTFILES_REPO}/fish/history      ~/.local/share/fish/fish_history
 
     success "Symlinks successfully setup"
+
+    # Call install_fish_plugins function after Fish plugins installation
+    if install_fish_plugins; then
+        success "Fish plugins installed"
+    else
+        error "Fish plugins couldn't be installed"
+    fi
 }
 
 function symlink() {

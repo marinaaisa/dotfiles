@@ -5,6 +5,7 @@ main() {
     configure_finder
     configure_app_store
     configure_3rd_party
+    mail
 }
 
 function add_app_to_dock {
@@ -69,14 +70,16 @@ function configure_system() {
     defaults write com.apple.dock "show-recents" -bool "false"
 
     declare -a apps=(
-        '/Applications/1Password 7.app'
-        '/System/Applications/Notes.app'
-        '/Applications/Todoist.app'
-        '/Applications/iTerm.app'
+        '/System/Applications/Mail.app'
+        '/System/Applications/Calendar.app'
+        '/System/Applications/Obsidian.app'
+        '/Applications/Slack.app'
         '/Applications/Visual Studio Code.app'
         '/Applications/Google Chrome.app'
+        '/Applications/iTerm.app'
         '/Applications/Spotify.app'
-        '/Applications/Anki.app'
+        '/Applications/Todoist.app'
+        '/Applications/1Password.app'
     );
 
     for app in "${apps[@]}"; do
@@ -193,4 +196,10 @@ function configure_3rd_party () {
     defaults write com.googlecode.iterm2 SUEnableAutomaticChecks -bool true
 }
 
-main "$@" 
+function mail () {
+    # Email config
+    # `Mail -> Preferences -> List Preview -> None`
+    osascript mail-config.scpt
+}
+
+main "$@"

@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
 
 main() {
+    open_vscode_command_palette
     # Install all needed VS code extensions.
     install_extensions
     # Add custom user settings to VS code.
     configure_settings
+}
+
+function open_vscode_command_palette() {
+# Open the Command Palette in VS Code
+osascript -e 'tell application "Visual Studio Code" to activate'
+osascript -e 'tell application "System Events" to keystroke "p" using {command down, shift down}'
+
+# Type 'shell command' and press Enter
+osascript -e 'tell application "System Events" to keystroke "shell command"'
+osascript -e 'tell application "System Events" to keystroke return'
 }
 
 function install_extensions() {

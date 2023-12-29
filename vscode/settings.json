@@ -63,7 +63,6 @@
   },
   "window.reopenFolders": "all",
   "terminal.external.osxExec": "iTerm2.app",
-  "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "material-icon-theme",
   "editor.tabSize": 2,
   "git.autofetch": true,
@@ -82,7 +81,6 @@
   "markdown.preview.markEditorSelection": false,
   "eslint.packageManager": "npm",
   "vetur.format.defaultFormatter.js": "prettier-eslint",
-  "search.useIgnoreFiles": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "cSpell.enabledLanguageIds": [
     "css",
@@ -100,5 +98,8 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.associations": {
+    ".env.development.local": "shellscript"
+  }
 }
