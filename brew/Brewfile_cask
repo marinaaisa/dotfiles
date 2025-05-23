@@ -8,6 +8,7 @@ cask "figma"
 cask "slack"
 cask "raycast"
 cask "obsidian"
+cask "domzilla-caffeine"
 # should install `Wacom Intuos Pro small (2019) - PTH-460 Support`
 # from https://www.wacom.com/en-es/support/product-support/drivers
 cask "wacom-tablet"
