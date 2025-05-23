@@ -43,8 +43,9 @@ function install_extensions() {
         code --install-extension editorconfig.editorconfig
         code --install-extension yzhang.markdown-all-in-one
         code --install-extension formulahendry.code-runner
+        code --install-extension stkb.rewrap
         # Theme
-        code --install-extension dracula-theme.theme-dracula
+        code --install-extension sdras.night-owl
         code --install-extension pkief.material-icon-theme
         fi
 }

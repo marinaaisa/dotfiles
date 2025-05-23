@@ -62,6 +62,7 @@
     "**/www": true
   },
   "window.reopenFolders": "all",
+  "window.autoDetectColorScheme": true,
   "terminal.external.osxExec": "iTerm2.app",
   "workbench.iconTheme": "material-icon-theme",
   "editor.tabSize": 2,
@@ -94,12 +95,22 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Dracula",
+  "[git-commit]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 72
+  },
+  "workbench.preferredDarkColorTheme": "Night Owl",
+  "workbench.preferredLightColorTheme": "Night Owl Light",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "files.associations": {
     ".env.development.local": "shellscript"
-  }
+  },
+  "files.insertFinalNewline": true,
+  "workbench.colorTheme": "Night Owl Light",
+  "extensions.ignoreRecommendations": true,
+  "rewrap.wrappingColumn": 72,
+  "gitlens.rebaseEditor.ordering": "asc"
 }
